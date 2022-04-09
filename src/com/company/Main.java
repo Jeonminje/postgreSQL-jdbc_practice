@@ -27,7 +27,7 @@ public class Main {
 
         if (connection != null) {
             System.out.println(connection);
-            System.out.println("You made it, take control your database now!");
+            System.out.println("You made it, take control your database now!\n");
         } else {
             System.out.println("Failed to make connection!");
         }
@@ -225,55 +225,276 @@ public class Main {
             smt.executeUpdate("insert into make values (5,3)");
 
             //2.1. Winona Ryder won the “Best supporting actor” award in 1994
+            System.out.println("Statement : Winona Ryder won the “Best supporting actor” award in 1994");
+            System.out.println("Translated SQL : insert into award values (1,'Best supporting actor')");
             smt.executeUpdate("insert into award values (1,'Best supporting actor')");
+            System.out.println("Update tables\naward table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from award");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getString("awardname"));
+                }
+                System.out.println();
+            }
+            System.out.println("Translated SQL : insert into actorObtain values (4,1,1994)");
             smt.executeUpdate("insert into actorObtain values (4,1,1994)");
+            System.out.println("Update tables\nactorObtain table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from actorObtain");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2) + " " + rs.getInt(3));
+                }
+                System.out.println();
+            }
 
             //2.2. Andrew Garfield won the “Best supporting actor” award in 2011
+            System.out.println("Statement : Andrew Garfield won the “Best supporting actor” award in 2011");
+            System.out.println("Translated SQL : insert into actorObtain values (9,1,2011)");
             smt.executeUpdate("insert into actorObtain values (9,1,2011)");
+            System.out.println("Update tables\nactorObtain table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from actorObtain");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2) + " " + rs.getInt(3));
+                }
+                System.out.println();
+            }
 
             //2.3. Jesse Eisenberg won the “Best main actor” award in 2011
+            System.out.println("Statement : Jesse Eisenberg won the “Best main actor” award in 2011");
+            System.out.println("Translated SQL : insert into award values (2,'Best main actor')");
             smt.executeUpdate("insert into award values (2,'Best main actor')");
+            System.out.println("Update tables\naward table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from award");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getString("awardname"));
+                }
+                System.out.println();
+            }
+            System.out.println("Translated SQL : insert into actorObtain values (8,2,2011)");
             smt.executeUpdate("insert into actorObtain values (8,2,2011)");
+            System.out.println("Update tables\nactorObtain table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from actorObtain");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2) + " " + rs.getInt(3));
+                }
+                System.out.println();
+            }
 
             //2.4. Johnny Depp won the “Best villain actor” award in 2011
+            System.out.println("Statement : Johnny Depp won the “Best villain actor” award in 2011");
+            System.out.println("Translated SQL : insert into award values (3,'Best villain actor')");
             smt.executeUpdate("insert into award values (3,'Best villain actor')");
+            System.out.println("Update tables\naward table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from award");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getString("awardname"));
+                }
+                System.out.println();
+            }
+            System.out.println("Translated SQL : insert into actorObtain values (3,3,2011)");
             smt.executeUpdate("insert into actorObtain values (3,3,2011)");
+            System.out.println("Update tables\nactorObtain table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from actorObtain");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2) + " " + rs.getInt(3));
+                }
+                System.out.println();
+            }
 
             //2.5. Edward Scissorhands won the “Best fantasy movie” award in 1991
+            System.out.println("Statement : Edward Scissorhands won the “Best fantasy movie” award in 1991");
+            System.out.println("Translated SQL : insert into award values (4,'Best fantasy movie')");
             smt.executeUpdate("insert into award values (4,'Best fantasy movie')");
+            System.out.println("Update tables\naward table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from award");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getString("awardname"));
+                }
+                System.out.println();
+            }
+            System.out.println("Translated SQL : insert into movieObtain values (2,4,1991)");
             smt.executeUpdate("insert into movieObtain values (2,4,1991)");
+            System.out.println("Update tables\nmovieObtain table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from movieObtain");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
 
             //2.6. Alice In Wonderland won the “Best fantasy movie” award in 2011
+            System.out.println("Statement : Alice In Wonderland won the “Best fantasy movie” award in 2011");
+            System.out.println("Translated SQL : insert into movieObtain values (3,4,2011)");
             smt.executeUpdate("insert into movieObtain values (3,4,2011)");
+            System.out.println("Update tables\nmovieObtain table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from movieObtain");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
 
             //2.7. Youn Yuhjung won the “Best supporting actor” award in 2021
+            System.out.println("Statement : Youn Yuhjung won the “Best supporting actor” award in 2021");
+            System.out.println("Translated SQL : insert into actorObtain values (2,1,2021)");
             smt.executeUpdate("insert into actorObtain values (2,1,2021)");
+            System.out.println("Update tables\nactorObtain table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from actorObtain");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2) + " " + rs.getInt(3));
+                }
+                System.out.println();
+            }
 
             //2.8. Minari won the “Best Foreign Language Film” award in 2021
+            System.out.println("Statement : Minari won the “Best Foreign Language Film” award in 2021");
+            System.out.println("Translated SQL : insert into award values (5,'Best Foreign Language Film");
             smt.executeUpdate("insert into award values (5,'Best Foreign Language Film')");
+            System.out.println("Update tables\naward table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from award");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getString("awardname"));
+                }
+                System.out.println();
+            }
+            System.out.println("Translated SQL : insert into movieObtain values (1,5,2021)");
             smt.executeUpdate("insert into movieObtain values (1,5,2021)");
+            System.out.println("Update tables\nmovieObtain table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from movieObtain");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
 
             //------------------------------
 
             //3.1 Bob rates 3 to “The Dark Knight”.
+            System.out.println("Statement : Bob rates 3 to “The Dark Knight");
+            System.out.println("Translated SQL : insert into customerRate values (1,5,3)");
             smt.executeUpdate("insert into customerRate values (1,5,3)");
+            System.out.println("Update tables\ncustomerRate table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from customerRate");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
 
             //3.2 Bell rates 5 to the movies whose director is “Tim Burton”.
+            System.out.println("Statement : Bell rates 5 to the movies whose director is “Tim Burton");
+            System.out.println("Translated SQL : insert into customerRate values (5,2,5)");
             smt.executeUpdate("insert into customerRate values (5,2,5)");
+            System.out.println("Update tables\ncustomerRate table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from customerRate");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
+            System.out.println("Translated SQL : insert into customerRate values (5,3,5)");
             smt.executeUpdate("insert into customerRate values (5,3,5)");
+            System.out.println("Update tables\ncustomerRate table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from customerRate");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
 
             //3.3 Jill rates 4 to the movies whose main actor is female.
+            System.out.println("Statement : Jill rates 4 to the movies whose main actor is female.");
+            System.out.println("Translated SQL : insert into customerRate values (4,2,4)");
             smt.executeUpdate("insert into customerRate values (4,2,4)");
+            System.out.println("Update tables\ncustomerRate table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from customerRate");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
+            System.out.println("Translated SQL : insert into customerRate values (4,3,4)");
             smt.executeUpdate("insert into customerRate values (4,3,4)");
+            System.out.println("Update tables\ncustomerRate table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from customerRate");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
 
             //3.4 Jack rates 4 to the fantasy movies.
+            System.out.println("Statement : Jill rates 4 to the movies whose main actor is female.");
+            System.out.println("Translated SQL : insert into customerRate values (3,2,4)");
             smt.executeUpdate("insert into customerRate values (3,2,4)");
+            System.out.println("Update tables\ncustomerRate table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from customerRate");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
+            System.out.println("Translated SQL : insert into customerRate values (3,3,4)");
             smt.executeUpdate("insert into customerRate values (3,3,4)");
+            System.out.println("Update tables\ncustomerRate table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from customerRate");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
 
             //3.5. John rates 5 to the movies whose actor won the “Best supporting actor” award (Ryder,andrew,yun)
+            System.out.println("Statement : John rates 5 to the movies whose actor won the “Best supporting actor” award (Ryder,andrew,yun)");
+            System.out.println("Translated SQL : insert into customerRate values (2,1,5)");
             smt.executeUpdate("insert into customerRate values (2,1,5)");
+            System.out.println("Update tables\ncustomerRate table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from customerRate");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
+            System.out.println("Translated SQL : insert into customerRate values (2,2,5)");
             smt.executeUpdate("insert into customerRate values (2,2,5)");
-            smt.executeUpdate("insert into customerRate values (2,1,5)");
+            System.out.println("Update tables\ncustomerRate table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from customerRate");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
+            System.out.println("Translated SQL : insert into customerRate values (2,4,5)");
+            smt.executeUpdate("insert into customerRate values (2,4,5)");
+            System.out.println("Update tables\ncustomerRate table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from customerRate");
+                while(rs.next()){
+                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                }
+                System.out.println();
+            }
+
 
             connection.close();
         }
