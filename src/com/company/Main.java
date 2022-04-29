@@ -36,21 +36,6 @@ public class Main {
 
             Statement smt = connection.createStatement();
 
-
-            smt.executeUpdate("drop table director CASCADE");
-            smt.executeUpdate("drop table actor CASCADE");
-            smt.executeUpdate("drop table movie CASCADE");
-            smt.executeUpdate("drop table award CASCADE");
-            smt.executeUpdate("drop table genre CASCADE");
-            smt.executeUpdate("drop table customer CASCADE");
-            smt.executeUpdate("drop table movieGenre ");
-            smt.executeUpdate("drop table movieObtain ");
-            smt.executeUpdate("drop table actorObtain ");
-            smt.executeUpdate("drop table directorObtain ");
-            smt.executeUpdate("drop table casting ");
-            smt.executeUpdate("drop table make ");
-            smt.executeUpdate("drop table customerRate ");
-
             smt.executeUpdate("CREATE TABLE director (" +
                     "directorID " + "int primary key,"+
                     "directorName " +"varchar(30),"+
@@ -222,7 +207,7 @@ public class Main {
             smt.executeUpdate("insert into movieGenre values (5,'Thriller')");
             smt.executeUpdate("insert into casting values (5,6,'Main actor')");
             smt.executeUpdate("insert into casting values (5,7,'Main actor')");
-            smt.executeUpdate("insert into make values (5,3)");
+            smt.executeUpdate("insert into make values (5,4)");
 
             //2.1. Winona Ryder won the “Best supporting actor” award in 1994
             System.out.println("Statement : Winona Ryder won the “Best supporting actor” award in 1994");
@@ -231,8 +216,9 @@ public class Main {
             System.out.println("Update tables\naward table");
             {
                 ResultSet rs = smt.executeQuery("Select * from award");
+                System.out.println("|" + String.format("%-10s" , "awardID")+ "|" + String.format("%-20s" , "awardName"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getString("awardname"));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1))+ "|" + String.format("%-20s" , rs.getString("awardname")));
                 }
                 System.out.println();
             }
@@ -241,8 +227,10 @@ public class Main {
             System.out.println("Update tables\nactorObtain table");
             {
                 ResultSet rs = smt.executeQuery("Select * from actorObtain");
+                System.out.println("|" + String.format( "%-10s" , "actorID")+ "|" + String.format("%-10s" , "awardId") + "|" + String.format("%-5s", "year"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2) + " " + rs.getInt(3));
+
+                    System.out.println("|" + String.format("%-10d", rs.getInt(1)) + "|" + String.format("%-10d", rs.getInt(2)) + "|" + String.format("%-5d",rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -254,8 +242,10 @@ public class Main {
             System.out.println("Update tables\nactorObtain table");
             {
                 ResultSet rs = smt.executeQuery("Select * from actorObtain");
+                System.out.println("|" + String.format( "%-10s" , "actorID")+ "|" + String.format("%-10s" , "awardId") + "|" + String.format("%-5s", "year"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2) + " " + rs.getInt(3));
+
+                    System.out.println("|" + String.format("%-10d", rs.getInt(1)) + "|" + String.format("%-10d", rs.getInt(2)) + "|" + String.format("%-5d",rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -267,8 +257,9 @@ public class Main {
             System.out.println("Update tables\naward table");
             {
                 ResultSet rs = smt.executeQuery("Select * from award");
+                System.out.println("|" + String.format("%-10s" , "awardID")+ "|" + String.format("%-20s" , "awardName"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getString("awardname"));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1))+ "|" + String.format("%-20s" , rs.getString("awardname")));
                 }
                 System.out.println();
             }
@@ -277,8 +268,10 @@ public class Main {
             System.out.println("Update tables\nactorObtain table");
             {
                 ResultSet rs = smt.executeQuery("Select * from actorObtain");
+                System.out.println("|" + String.format( "%-10s" , "actorID")+ "|" + String.format("%-10s" , "awardId") + "|" + String.format("%-5s", "year"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2) + " " + rs.getInt(3));
+
+                    System.out.println("|" + String.format("%-10d", rs.getInt(1)) + "|" + String.format("%-10d", rs.getInt(2)) + "|" + String.format("%-5d",rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -290,8 +283,9 @@ public class Main {
             System.out.println("Update tables\naward table");
             {
                 ResultSet rs = smt.executeQuery("Select * from award");
+                System.out.println("|" + String.format("%-10s" , "awardID")+ "|" + String.format("%-20s" , "awardName"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getString("awardname"));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1))+ "|" + String.format("%-20s" , rs.getString("awardname")));
                 }
                 System.out.println();
             }
@@ -300,8 +294,9 @@ public class Main {
             System.out.println("Update tables\nactorObtain table");
             {
                 ResultSet rs = smt.executeQuery("Select * from actorObtain");
+                System.out.println("|" + String.format( "%-10s" , "actorID")+ "|" + String.format("%-10s" , "awardId") + "|" + String.format("%-5s", "year"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2) + " " + rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d", rs.getInt(1)) + "|" + String.format("%-10d", rs.getInt(2)) + "|" + String.format("%-5d",rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -313,8 +308,9 @@ public class Main {
             System.out.println("Update tables\naward table");
             {
                 ResultSet rs = smt.executeQuery("Select * from award");
+                System.out.println("|" + String.format("%-10s" , "awardID")+ "|" + String.format("%-20s" , "awardName"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getString("awardname"));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1))+ "|" + String.format("%-20s" , rs.getString("awardname")));
                 }
                 System.out.println();
             }
@@ -323,8 +319,21 @@ public class Main {
             System.out.println("Update tables\nmovieObtain table");
             {
                 ResultSet rs = smt.executeQuery("Select * from movieObtain");
+                System.out.println("|" + String.format("%-10s" , "movieID") + "|" + String.format("%-10s" , "awardID") + "|" + String.format("%-5s" , "year"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d", rs.getInt(1)) +"|"+ String.format("%-10d", rs.getInt(2)) + "|" + String.format("%-5d", (rs.getInt(3))));
+                }
+                System.out.println();
+            }
+
+            System.out.println("Translated SQL : insert into directorObtain values (2,4,1991)");
+            smt.executeUpdate("insert into directorObtain values (2,4,1991)");
+            System.out.println("Update tables\ndirectorObtain table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from directorObtain");
+                System.out.println("|" + String.format("%-10s" , "directorID") + "|" + String.format("%-10s" , "awardID") + "|" + String.format("%-5s" , "year"));
+                while(rs.next()){
+                    System.out.println("|" + String.format("%-10d", rs.getInt(1)) +"|"+ String.format("%-10d", rs.getInt(2)) + "|" + String.format("%-5d", (rs.getInt(3))));
                 }
                 System.out.println();
             }
@@ -336,8 +345,21 @@ public class Main {
             System.out.println("Update tables\nmovieObtain table");
             {
                 ResultSet rs = smt.executeQuery("Select * from movieObtain");
+                System.out.println("|" + String.format("%-10s" , "movieID") + "|" + String.format("%-10s" , "awardID") + "|" + String.format("%-5s" , "year"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d", rs.getInt(1)) +"|"+ String.format("%-10d", rs.getInt(2)) + "|" + String.format("%-5d", (rs.getInt(3))));
+                }
+                System.out.println();
+            }
+
+            System.out.println("Translated SQL : insert into directorObtain values (2,4,2011)");
+            smt.executeUpdate("insert into directorObtain values (2,4,2011)");
+            System.out.println("Update tables\ndirectorObtain table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from directorObtain");
+                System.out.println("|" + String.format("%-10s" , "directorID") + "|" + String.format("%-10s" , "awardID") + "|" + String.format("%-5s" , "year"));
+                while(rs.next()){
+                    System.out.println("|" + String.format("%-10d", rs.getInt(1)) +"|"+ String.format("%-10d", rs.getInt(2)) + "|" + String.format("%-5d", (rs.getInt(3))));
                 }
                 System.out.println();
             }
@@ -349,8 +371,10 @@ public class Main {
             System.out.println("Update tables\nactorObtain table");
             {
                 ResultSet rs = smt.executeQuery("Select * from actorObtain");
+                System.out.println("|" + String.format( "%-10s" , "actorID")+ "|" + String.format("%-10s" , "awardId") + "|" + String.format("%-5s", "year"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2) + " " + rs.getInt(3));
+
+                    System.out.println("|" + String.format("%-10d", rs.getInt(1)) + "|" + String.format("%-10d", rs.getInt(2)) + "|" + String.format("%-5d",rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -362,8 +386,9 @@ public class Main {
             System.out.println("Update tables\naward table");
             {
                 ResultSet rs = smt.executeQuery("Select * from award");
+                System.out.println("|" + String.format("%-10s" , "awardID")+ "|" + String.format("%-20s" , "awardName"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getString("awardname"));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1))+ "|" + String.format("%-20s" , rs.getString("awardname")));
                 }
                 System.out.println();
             }
@@ -372,8 +397,21 @@ public class Main {
             System.out.println("Update tables\nmovieObtain table");
             {
                 ResultSet rs = smt.executeQuery("Select * from movieObtain");
+                System.out.println("|" + String.format("%-10s" , "movieObtain") + "|" + String.format("%-10s" , "awardID") + "|" + String.format("%-5s" , "year"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d", rs.getInt(1)) +"|"+ String.format("%-10d", rs.getInt(2)) + "|" + String.format("%-5d", (rs.getInt(3))));
+                }
+                System.out.println();
+            }
+
+            System.out.println("Translated SQL : insert into directorObtain values (1,5,2021)");
+            smt.executeUpdate("insert into directorObtain values (1,5,2021)");
+            System.out.println("Update tables\ndirectorObtain table");
+            {
+                ResultSet rs = smt.executeQuery("Select * from directorObtain");
+                System.out.println("|" + String.format("%-10s" , "directorID") + "|" + String.format("%-10s" , "awardID") + "|" + String.format("%-5s" , "year"));
+                while(rs.next()){
+                    System.out.println("|" + String.format("%-10d", rs.getInt(1)) +"|"+ String.format("%-10d", rs.getInt(2)) + "|" + String.format("%-5d", (rs.getInt(3))));
                 }
                 System.out.println();
             }
@@ -387,8 +425,9 @@ public class Main {
             System.out.println("Update tables\ncustomerRate table");
             {
                 ResultSet rs = smt.executeQuery("Select * from customerRate");
+                System.out.println("|" + String.format("%-10s", "customerID") + "|" + String.format("%-10s", "movieID") + "|" + String.format("%-10s", "rate"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1)) + "|" + String.format("%-10d",rs.getInt(2)) + "|" + String.format("%-10d", rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -400,8 +439,9 @@ public class Main {
             System.out.println("Update tables\ncustomerRate table");
             {
                 ResultSet rs = smt.executeQuery("Select * from customerRate");
+                System.out.println("|" + String.format("%-10s", "customerID") + "|" + String.format("%-10s", "movieID") + "|" + String.format("%-10s", "rate"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1)) + "|" + String.format("%-10d",rs.getInt(2)) + "|" + String.format("%-10d", rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -410,8 +450,9 @@ public class Main {
             System.out.println("Update tables\ncustomerRate table");
             {
                 ResultSet rs = smt.executeQuery("Select * from customerRate");
+                System.out.println("|" + String.format("%-10s", "customerID") + "|" + String.format("%-10s", "movieID") + "|" + String.format("%-10s", "rate"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1)) + "|" + String.format("%-10d",rs.getInt(2)) + "|" + String.format("%-10d", rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -423,8 +464,9 @@ public class Main {
             System.out.println("Update tables\ncustomerRate table");
             {
                 ResultSet rs = smt.executeQuery("Select * from customerRate");
+                System.out.println("|" + String.format("%-10s", "customerID") + "|" + String.format("%-10s", "movieID") + "|" + String.format("%-10s", "rate"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1)) + "|" + String.format("%-10d",rs.getInt(2)) + "|" + String.format("%-10d", rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -433,8 +475,9 @@ public class Main {
             System.out.println("Update tables\ncustomerRate table");
             {
                 ResultSet rs = smt.executeQuery("Select * from customerRate");
+                System.out.println("|" + String.format("%-10s", "customerID") + "|" + String.format("%-10s", "movieID") + "|" + String.format("%-10s", "rate"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1)) + "|" + String.format("%-10d",rs.getInt(2)) + "|" + String.format("%-10d", rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -446,8 +489,9 @@ public class Main {
             System.out.println("Update tables\ncustomerRate table");
             {
                 ResultSet rs = smt.executeQuery("Select * from customerRate");
+                System.out.println("|" + String.format("%-10s", "customerID") + "|" + String.format("%-10s", "movieID") + "|" + String.format("%-10s", "rate"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1)) + "|" + String.format("%-10d",rs.getInt(2)) + "|" + String.format("%-10d", rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -456,8 +500,9 @@ public class Main {
             System.out.println("Update tables\ncustomerRate table");
             {
                 ResultSet rs = smt.executeQuery("Select * from customerRate");
+                System.out.println("|" + String.format("%-10s", "customerID") + "|" + String.format("%-10s", "movieID") + "|" + String.format("%-10s", "rate"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1)) + "|" + String.format("%-10d",rs.getInt(2)) + "|" + String.format("%-10d", rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -469,8 +514,9 @@ public class Main {
             System.out.println("Update tables\ncustomerRate table");
             {
                 ResultSet rs = smt.executeQuery("Select * from customerRate");
+                System.out.println("|" + String.format("%-10s", "customerID") + "|" + String.format("%-10s", "movieID") + "|" + String.format("%-10s", "rate"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1)) + "|" + String.format("%-10d",rs.getInt(2)) + "|" + String.format("%-10d", rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -479,8 +525,9 @@ public class Main {
             System.out.println("Update tables\ncustomerRate table");
             {
                 ResultSet rs = smt.executeQuery("Select * from customerRate");
+                System.out.println("|" + String.format("%-10s", "customerID") + "|" + String.format("%-10s", "movieID") + "|" + String.format("%-10s", "rate"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1)) + "|" + String.format("%-10d",rs.getInt(2)) + "|" + String.format("%-10d", rs.getInt(3)));
                 }
                 System.out.println();
             }
@@ -489,12 +536,137 @@ public class Main {
             System.out.println("Update tables\ncustomerRate table");
             {
                 ResultSet rs = smt.executeQuery("Select * from customerRate");
+                System.out.println("|" + String.format("%-10s", "customerID") + "|" + String.format("%-10s", "movieID") + "|" + String.format("%-10s", "rate"));
                 while(rs.next()){
-                    System.out.println(rs.getInt(1) +" "+ rs.getInt(2)+" "+rs.getInt(3));
+                    System.out.println("|" + String.format("%-10d" , rs.getInt(1)) + "|" + String.format("%-10d",rs.getInt(2)) + "|" + String.format("%-10d", rs.getInt(3)));
                 }
                 System.out.println();
             }
 
+            //-------------------------------------------------------
+            //4. Select the names of the movies whose actor are dead.
+            System.out.println("Statement : Select the names of the movies whose actor are dead.");
+            System.out.println("Translated SQL : select actorName from actor where dateOfDeath is not null");
+            {
+                ResultSet rs = smt.executeQuery("select actorName from actor where dateOfDeath is not null");
+                System.out.println("|" + String.format("%-10s", "actorName"));
+                while(rs.next()){
+                    System.out.println( String.format("%-10s", rs.getString(1)));
+                }
+                System.out.println();
+            }
+            //5. Select the names of the directors who cast the same actor more than once.
+            System.out.println("Statement : Select the names of the directors who cast the same actor more than once.");
+            System.out.println("Translated SQL : with result1 as (\n" +
+                    "                        with K as (select make.movieID,directorID,actorID from make,casting where make.movieID = casting.movieID) +\n" +
+                    "                        select A.directorID\n" +
+                    "                        from K as A, K as B\n" +
+                    "                        where A.movieID != B.movieID and A.directorID = B.directorID and A.actorID=B.actorID)\n" +
+                    "                 select distinct directorName from result1,director where result1.directorID = director.directorID");
+            {
+
+                ResultSet rs = smt.executeQuery(
+                        "with result1 as (" +
+                        "with K as (select make.movieID,directorID,actorID from make,casting where make.movieID = casting.movieID)" +
+                                "select A.directorID " + "" +
+                                "from K as A, K as B " +
+                                "where A.movieID != B.movieID and A.directorID = B.directorID and A.actorID=B.actorID) " +
+                        "select distinct directorName from result1,director where result1.directorID = director.directorID"
+                );
+                System.out.println("|" + String.format("%-10s","directorName"));
+                while(rs.next()){
+                    System.out.println(String.format("%-10s",rs.getString(1)) );
+                }
+                System.out.println();
+            }
+
+            //6. Select the names of the movies and the genres, where movies have the common genre
+            String[] genre = {"Drama","Fantasy","Romance","Adventure","Family","Action","Mystery","Thriller"};
+            System.out.println("Statement : Select the names of the movies and the genres, where movies have the common genre");
+            System.out.println("Translated SQL : select genreName, movieName from movieGenre,movie where movieGenre.movieID = movie.movieID");
+            {
+
+                for(int i=0; i<8;i++) {
+                    ResultSet rs = smt.executeQuery(
+                            "select genreName, movieName from movieGenre,movie where movieGenre.movieID = movie.movieID "
+                    );
+                    System.out.print(genre[i] + " : ");
+                    while (rs.next()) {
+                        if (genre[i].compareTo(rs.getString(1)) == 0) {
+                            System.out.print(String.format("%s", rs.getString(2)) + ", ");
+                        }
+                    }
+
+                    System.out.println();
+                }
+                System.out.println();
+            }
+
+            //7. Delete the movies whose director or actor did not get any award and delete data from related tables.
+            System.out.println("Statement : Delete the movies whose director or actor did not get any award and delete data from related tables.");
+            System.out.println("Translated SQL : delete from director where directorName not in (select directorName from director,directorObtain where director.directorID = directorObtain.directorID)");
+            {
+                smt.executeUpdate("delete from director where directorName not in (select directorName from director,directorObtain where director.directorID = directorObtain.directorID)");
+                System.out.println("Update tables\ndirector table");
+                ResultSet rs1 = smt.executeQuery("select * from director");
+                System.out.println("|" + String.format("%-15s","directorID") + "|" + String.format("%-20s","directorName") + "|" + String.format("%-15s","dateOfBirth") + "|" + String.format("%-15s", "dateOfDeath"));
+                while (rs1.next()) {
+                    System.out.println(String.format("%-16d", rs1.getInt(1)) + String.format("%-21s", rs1.getString(2)) + String.format("%-16s", rs1.getString(3)) + String.format("%-16s", rs1.getString(4)));
+                }
+                System.out.println();
+            }
+            System.out.println("Translated SQL : delete from actor where actorName not in (select actorName from actor,actorObtain where actor.actorID = actorObtain.actorID)");
+            {
+                smt.executeUpdate("delete from actor where actorName not in (select actorName from actor,actorObtain where actor.actorID = actorObtain.actorID)");
+                System.out.println("Update tables\nactor table");
+                ResultSet rs2 = smt.executeQuery("select * from actor");
+                System.out.println("|" + String.format("%-10s","actorID") + "|" + String.format("%-20s","actorName") + "|" + String.format("%-15s","dateOfBirth") + "|" + String.format("%-15s","dateOfDeath") + "|" + "gender");
+                while(rs2.next()){
+                    System.out.println(String.format("%-11d", rs2.getInt(1)) + String.format("%-21s", rs2.getString(2)) + String.format("%-16s", rs2.getString(3)) + String.format("%-16s", rs2.getString(4)) + rs2.getString(5));
+                }
+                System.out.println();
+            }
+
+            //8. Delete all customers and delete data from related tables.
+            System.out.println("Statement : Delete all customers and delete data from related tables.");
+            System.out.println("Translated SQL : delete from customer");
+            {
+                smt.executeUpdate("delete from customer ");
+                ResultSet rs = smt.executeQuery("select * from customer ");
+                System.out.println();
+            }
+            //9. Delete all tables and data (make the database empty).
+            System.out.println("Statement : Delete all customers and delete data from related tables.");
+            {
+                System.out.println("Translated SQL : ");
+                System.out.println("drop table director CASCADE\n" +
+                        "drop table actor CASCADE\n" +
+                        "drop table movie CASCADE\n" +
+                        "drop table award CASCADE\n" +
+                        "drop table genre CASCADE\n" +
+                        "drop table customer CASCADE\n" +
+                        "drop table movieGenre\n" +
+                        "drop table movieObtain\n" +
+                        "drop table actorObtain\n" +
+                        "drop table directorObtain\n" +
+                        "drop table casting\n" +
+                        "drop table make\n" +
+                        "drop table customerRate");
+
+                smt.executeUpdate("drop table director CASCADE");
+                smt.executeUpdate("drop table actor CASCADE");
+                smt.executeUpdate("drop table movie CASCADE");
+                smt.executeUpdate("drop table award CASCADE");
+                smt.executeUpdate("drop table genre CASCADE");
+                smt.executeUpdate("drop table customer CASCADE");
+                smt.executeUpdate("drop table movieGenre ");
+                smt.executeUpdate("drop table movieObtain ");
+                smt.executeUpdate("drop table actorObtain ");
+                smt.executeUpdate("drop table directorObtain ");
+                smt.executeUpdate("drop table casting ");
+                smt.executeUpdate("drop table make ");
+                smt.executeUpdate("drop table customerRate ");
+            }
 
             connection.close();
         }
